@@ -1,0 +1,5 @@
+*.exe
+test.py
+/ytdl-venv
+/__pycache__
+/music
