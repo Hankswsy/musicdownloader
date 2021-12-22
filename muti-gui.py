@@ -33,16 +33,13 @@ def GUI():
                     }
                     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                         ydl.download([url.get()])
+                    
+                    fname = path.get
+                    print(fname)
                     fname=path.get()
-                    if not os.path.exists(fname):
-                        os.mkdir("music")  
-                        x=glob.glob("*.mp3")
-                        for i in range(len(x)):
-                            shutil.move(x[i],fname) 
-                    else:
-                        x=glob.glob("*.mp3")
-                        for i in range(len(x)):
-                            shutil.move(x[i],fname)
+                    x=glob.glob("*.mp3")
+                    for i in range(len(x)):
+                        shutil.move(x[i],fname)
                 elif s2.get() == 1:
                     ydl_opts = {
                                 'format': 'worstaudio',
@@ -57,15 +54,9 @@ def GUI():
                     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                         ydl.download([url.get()])
                     fname=path.get()
-                    if not os.path.exists(fname):
-                        os.mkdir("music")  
-                        x=glob.glob("*.mp3")
-                        for i in range(len(x)):
-                            shutil.move(x[i],fname) 
-                    else:
-                        x=glob.glob("*.mp3")
-                        for i in range(len(x)):
-                            shutil.move(x[i],fname)
+                    x=glob.glob("*.mp3")
+                    for i in range(len(x)):
+                        shutil.move(x[i],fname)
 
             elif s1.get() == 1:
                 if s2.get() == 0:
@@ -85,16 +76,10 @@ def GUI():
                             subprocess.run(f"ffmpeg -i {y[j]} {y1}.mp4")
                         for i in range(len(y)):
                             os.remove(y[i])
-                        fname="mv"
-                        if not os.path.exists(fname):
-                            os.mkdir("mv")  
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv") 
-                        else:
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv")
+                        fname=path.get()
+                        x=glob.glob("*.mp4")
+                        for i in range(len(x)):
+                            shutil.move(x[i],fname)
 
                     elif len(glob.glob("*.webm"))>=1:
                         x=glob.glob("*.webm")
@@ -106,16 +91,11 @@ def GUI():
                             subprocess.run(f"ffmpeg -i {y[j]} {y1}.mp4")
                         for i in range(len(y)):
                             os.remove(y[i])
-                        fname="mv"
-                        if not os.path.exists(fname):
-                            os.mkdir("mv")  
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv") 
-                        else:
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv")
+                        fname=path.get()
+                        fname=path.get()
+                        x=glob.glob("*.mp4")
+                        for i in range(len(x)):
+                            shutil.move(x[i],fname)
                 if s2.get() == 1:
                     ydl_opts = {
                             'format': 'worstvideo+worstaudio'
@@ -133,16 +113,11 @@ def GUI():
                             subprocess.run(f"ffmpeg -i {y[j]} {y1}.mp4")
                         for i in range(len(y)):
                             os.remove(y[i])
-                        fname="mv"
-                        if not os.path.exists(fname):
-                            os.mkdir("mv")  
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv") 
-                        else:
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv")
+                        fname=path.get()
+                        fname=path.get()
+                        x=glob.glob("*.mp4")
+                        for i in range(len(x)):
+                            shutil.move(x[i],fname)
 
                     elif len(glob.glob("*.webm"))>=1:
                         x=glob.glob("*.webm")
@@ -154,16 +129,10 @@ def GUI():
                             subprocess.run(f"ffmpeg -i {y[j]} {y1}.mp4")
                         for i in range(len(y)):
                             os.remove(y[i])
-                        fname="mv"
-                        if not os.path.exists(fname):
-                            os.mkdir("mv")  
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv") 
-                        else:
-                            x=glob.glob("*.mp4")
-                            for i in range(len(x)):
-                                shutil.move(x[i],"./mv") 
+                        fname=path.get()
+                        x=glob.glob("*.mp4")
+                        for i in range(len(x)):
+                            shutil.move(x[i],fname)
 
         labelmsg.config(text="")
         if url.get() == "":
